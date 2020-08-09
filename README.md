@@ -17,4 +17,5 @@ Just check how you would like your password and generate it!
 
 # Screenshot of the deployed application
 
+![portfolio demo](./Develop/assets/images/Password-Generator.PNG)
 
