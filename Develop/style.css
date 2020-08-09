@@ -94,6 +94,60 @@ header {
     align-items: center;
 }
 
+button[disabled] {
+    cursor: default;
+    background: #c0c7cf;
+}
+
+.float-right {
+    float: right;
+}
+
+#passwordDisplay {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    display: block;
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 85px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px dashed #c0c7cf;
+    border-radius: 6px;
+    resize: none;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background-color: #ff00008c;
+}
+
+.form {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 1rem;
+    column-gap: 2rem;
+    margin-bottom: 20px;
+}
+
+.title {
+    margin-top: 0px;
+    margin-bottom: 10;
+    text-align: center;
+}
+
+.main-title {
+    font-weight: bold;
+}
+
 @media (max-width: 690px) {
     .btn {
         font-size: 1rem;
