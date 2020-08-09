@@ -25,6 +25,32 @@ var SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
 characterAmountNumber.addEventListener('input', syncCharacterAmount)
 characterAmountRange.addEventListener('input', syncCharacterAmount)
 
+form.addEventListener('submit', e => {
+    e.preventDefault() //this prevents the default 
+    var characterAmount = characterAmountNumber.value
+    var includeUppercase = includeUppercaseElement.checked
+    var includeNumbers = includeNumbersElement.checked
+    var includeSymbols = includeSymbolsElement.checked
+        //here we tell the function what to generate if we choose options
+    var password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols)
+    passwordDisplay.innerText = password
+})
+
+//function to generate password
+function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
+    let charCodes = LOWERCASE_CHAR_CODES
+    if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
+    if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
+    if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
+
+    var passwordCharacters = []
+    for (let i = 0; i < characterAmount; i++) {
+        var characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+        passwordCharacters.push(String.fromCharCode(characterCode))
+    }
+    return passwordCharacters.join('')
+}
+
 
 //this function is delcared to pull the array of characters
 function arrayFromLowToHigh(low, high) {
